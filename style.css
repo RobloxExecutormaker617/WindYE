@@ -1,24 +1,44 @@
+/* Global Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #000;
-  color: #fff;
+  background: linear-gradient(135deg, #000000, #0f0f0f, #1a1a1a);
+  color: #00ffea;
   text-align: center;
+  animation: backgroundShift 10s infinite linear;
 }
 
-.container {
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container, main {
   padding: 50px;
 }
 
-h1 {
+h1, h2 {
   font-size: 48px;
   margin-bottom: 30px;
   color: #00ffff;
-  text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+  text-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
-.discord-btn, .download-btn {
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff; }
+  to { text-shadow: 0 0 25px #00ffff, 0 0 35px #ff00ff; }
+}
+
+ul, p, li, label {
+  font-size: 18px;
+  color: #00ffea;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.discord-btn, .download-btn, form input[type="submit"] {
   display: inline-block;
   margin: 20px;
   padding: 15px 25px;
@@ -33,9 +53,50 @@ h1 {
   box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080;
 }
 
-.discord-btn:hover, .download-btn:hover {
+.discord-btn:hover, .download-btn:hover, form input[type="submit"]:hover {
   background: #ff00ff;
   box-shadow: 0 0 25px #ff00ff, 0 0 40px #ff00ff;
+}
+
+.navbar {
+  list-style-type: none;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.navbar li {
+  display: inline;
+  margin: 10px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #00ffff;
+  padding: 10px 20px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.navbar li a:hover {
+  background-color: #ff0080;
+  color: #000;
+  box-shadow: 0 0 15px #ff0080;
+}
+
+form input, form textarea {
+  width: 90%;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #1a1a1a;
+  border: 1px solid #00ffff;
+  color: #00ffea;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffff;
 }
 
 .ad-box {
@@ -45,3 +106,15 @@ h1 {
   border-radius: 15px;
   box-shadow: 0 0 15px #00ffff;
 }
+
+/* Animation for title */
+@keyframes titleColor {
+  0% { color: #00ffff; }
+  50% { color: #ff0080; }
+  100% { color: #00ffff; }
+}
+
+h1, h2 {
+  animation: titleColor 2s infinite;
+}
+
