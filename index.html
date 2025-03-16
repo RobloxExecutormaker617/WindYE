@@ -1,157 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WindYE - Ultimate Site</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000; /* Black background */
-            color: #fff;
-            font-family: Arial, sans-serif;
-        }
-        .background-canvas {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        .content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            margin-top: 20%;
-            font-size: 40px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WindYE - Ultimate Site</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    nav {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      z-index: 999;
+    }
+    nav a {
+      color: #00ff99;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ff00ff;
+      text-decoration: underline;
+    }
+    .background-canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-top: 150px;
+    }
+    .content h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    .content p {
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Particle.js Background -->
-    <div id="particles-js" class="background-canvas"></div>
 
-    <!-- Fireworks Canvas -->
-    <canvas id="fireworksCanvas" class="background-canvas"></canvas>
+  <!-- Navbar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Download</a>
+    <a href="https://discord.gg/XySJyP6t" target="_blank">Join Discord</a>
+    <a href="#">FAQ</a>
+    <a href="#">Contact Us</a>
+    <a href="#">About</a>
+  </nav>
 
-    <!-- Matrix Rain Canvas -->
-    <canvas id="matrixCanvas" class="background-canvas"></canvas>
+  <!-- Background Effects -->
+  <div id="particles-js" class="background-canvas"></div>
+  <canvas id="fireworksCanvas" class="background-canvas"></canvas>
+  <canvas id="matrixCanvas" class="background-canvas"></canvas>
 
-    <!-- Main Content -->
-    <div class="content">
-        Welcome to WindYE! 🚀✨
-    </div>
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Welcome to WindYE! 🚀🔥</h1>
+    <p>The Ultimate Roblox Executor Platform</p>
+  </div>
 
-    <!-- Particle.js Library -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-    <!-- Initialize Particle.js -->
-    <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": { "enable": true, "value_area": 800 }
-                },
-                "color": { "value": "#00ff99" },
-                "shape": {
-                    "type": "circle",
-                    "stroke": { "width": 0, "color": "#000000" },
-                    "polygon": { "nb_sides": 5 }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": { "enable": false }
-                },
-                "size": {
-                    "value": 5,
-                    "random": true,
-                    "anim": { "enable": false }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#00ff99",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "bounce": true
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "repulse" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                },
-                "modes": {
-                    "repulse": { "distance": 100, "duration": 0.4 },
-                    "push": { "particles_nb": 4 }
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
-
-    <!-- Fireworks Effect using tsParticles -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-fireworks@2.2.3/tsparticles.preset.fireworks.min.js"></script>
-    <script>
-        (async () => {
-            await loadFireworksPreset(tsParticles);
-            await tsParticles.load({
-                id: "fireworksCanvas",
-                options: {
-                    preset: "fireworks",
-                    background: {
-                        color: "#000000"
-                    }
-                }
-            });
-        })();
-    </script>
-
-    <!-- Matrix Rain Effect -->
-    <script>
-        const matrixCanvas = document.getElementById('matrixCanvas');
-        const ctxMatrix = matrixCanvas.getContext('2d');
-        matrixCanvas.width = window.innerWidth;
-        matrixCanvas.height = window.innerHeight;
-
-        const matrixCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
-        const fontSize = 16;
-        const columns = matrixCanvas.width / fontSize;
-        const drops = Array(Math.floor(columns)).fill(1);
-
-        function drawMatrix() {
-            ctxMatrix.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctxMatrix.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-            ctxMatrix.fillStyle = '#00ff00';
-            ctxMatrix.font = `${fontSize}px monospace`;
-
-            drops.forEach((y, index) => {
-                const text = matrixCharacters.charAt(Math.floor(Math.random() * matrixCharacters.length));
-                const x = index * fontSize;
-                ctxMatrix.fillText(text, x, y * fontSize);
-
-                if (y * fontSize > matrixCanvas.height && Math.random() > 0.975) {
-                    drops[index] = 0;
-                }
-                drops[index]++;
-            });
+  <!-- Particle.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": "#00ff99" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#00ff99", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "bounce": true }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
         }
+      },
+      "retina_detect": true
+    });
+  </script>
 
-        setInterval(drawMatrix, 50);
-    </script>
+  <!-- Fireworks -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-fireworks@2.2.3/tsparticles.preset.fireworks.min.js"></script>
+  <script>
+    (async () => {
+      await loadFireworksPreset(tsParticles);
+      await tsParticles.load({
+        id: "fireworksCanvas",
+        options: { preset: "fireworks", background: { color: "#000000" } }
+      });
+    })();
+  </script>
+
+  <!-- Matrix Rain -->
+  <script>
+    const matrixCanvas = document.getElementById('matrixCanvas');
+    const ctx = matrixCanvas.getContext('2d');
+    matrixCanvas.width = window.innerWidth;
+    matrixCanvas.height = window.innerHeight;
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+    const fontSize = 16;
+    const columns = matrixCanvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+      ctx.fillStyle = '#00ff99';
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 33);
+  </script>
+
 </body>
 </html>
+
