@@ -1,120 +1,71 @@
-/* Global Styles */
-body {
+/* General Styles */
+body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #000000, #0f0f0f, #1a1a1a);
-  color: #00ffea;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  background: #000;
+  color: #0f0;
+}
+
+.matrix-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  animation: backgroundShift 10s infinite linear;
+  z-index: 1;
 }
 
-@keyframes backgroundShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.container, main {
-  padding: 50px;
-}
-
-h1, h2 {
-  font-size: 48px;
-  margin-bottom: 30px;
-  color: #00ffff;
-  text-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff;
-  animation: glow 2s ease-in-out infinite alternate;
+/* Neon Text Effect */
+.neon-text {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
+  animation: glow 1.5s infinite alternate;
 }
 
 @keyframes glow {
-  from { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff; }
-  to { text-shadow: 0 0 25px #00ffff, 0 0 35px #ff00ff; }
+  from {
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
+  }
+  to {
+    text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0, 0 0 80px #0f0;
+  }
 }
 
-ul, p, li, label {
-  font-size: 18px;
-  color: #00ffea;
-  text-shadow: 0 0 5px #00ffff;
-}
-
-.discord-btn, .download-btn, form input[type="submit"] {
+/* Neon Button */
+.neon-button {
   display: inline-block;
-  margin: 20px;
-  padding: 15px 25px;
-  font-size: 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #fff;
-  background: #ff0080;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080;
-}
-
-.discord-btn:hover, .download-btn:hover, form input[type="submit"]:hover {
-  background: #ff00ff;
-  box-shadow: 0 0 25px #ff00ff, 0 0 40px #ff00ff;
-}
-
-.navbar {
-  list-style-type: none;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow: hidden;
-}
-
-.navbar li {
-  display: inline;
   margin: 10px;
-}
-
-.navbar li a {
-  text-decoration: none;
-  color: #00ffff;
   padding: 10px 20px;
-  transition: 0.3s;
-  border-radius: 5px;
+  color: #0f0;
+  border: 2px solid #0f0;
+  text-decoration: none;
+  text-shadow: 0 0 5px #0f0;
+  box-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+  transition: all 0.3s ease;
 }
 
-.navbar li a:hover {
-  background-color: #ff0080;
+.neon-button:hover {
+  background: #0f0;
   color: #000;
-  box-shadow: 0 0 15px #ff0080;
+  box-shadow: 0 0 20px #0f0, 0 0 40px #0f0;
 }
 
-form input, form textarea {
-  width: 90%;
-  max-width: 500px;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #1a1a1a;
-  border: 1px solid #00ffff;
-  color: #00ffea;
+/* Disclaimer Style */
+.disclaimer {
+  font-size: 12px;
+  margin-top: 20px;
+  opacity: 0.8;
 }
 
-form input:focus, form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 10px #00ffff;
+/* Matrix Background */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
-
-.ad-box {
-  margin-top: 50px;
-  padding: 20px;
-  border: 2px dashed #00ffff;
-  border-radius: 15px;
-  box-shadow: 0 0 15px #00ffff;
-}
-
-/* Animation for title */
-@keyframes titleColor {
-  0% { color: #00ffff; }
-  50% { color: #ff0080; }
-  100% { color: #00ffff; }
-}
-
-h1, h2 {
-  animation: titleColor 2s infinite;
-}
-
