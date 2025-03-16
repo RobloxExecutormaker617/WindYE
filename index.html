@@ -1,81 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WindYE - Ultimate Roblox Executor</title>
+    <title>Hacker Executor</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <!-- Folder Icons in Top Right Corner -->
+    <div class="folder-icons">
+        <div class="folder">📁 Home</div>
+        <div class="folder">📁 Features</div>
+        <div class="folder">📁 Download</div>
+        <div class="folder">📁 Contact</div>
+    </div>
+
+    <!-- Main Content -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="WindYE Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="https://discord.gg/yourinvitecode" target="_blank">Join Discord</a></li>
-            </ul>
-        </nav>
+        <h1>Hacker Executor</h1>
+        <p>Your ultimate tool for hacking and execution.</p>
     </header>
 
-    <section id="hero">
-        <h1 class="animate-text">Welcome to WindYE</h1>
-        <p class="animate-text">Your ultimate Roblox executor with advanced features and custom scripts.</p>
-        <a href="#download" class="cta-button animate-button">Download Now</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>🚀 Welcome to the Future</h2>
+            <p>Experience the power of our executor with cutting-edge features.</p>
+            <a href="#download" class="btn">💾 Download Now</a>
+        </div>
     </section>
 
-    <section id="download">
-        <h2>Download the Ultimate Executor</h2>
-        <p>Get WindYE, the most powerful and advanced Roblox executor. Just click the button below to get started!</p>
-        <button onclick="downloadExecutor()" class="download-btn animate-button">Download Executor</button>
+    <section id="features" class="features">
+        <h2>✨ Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>⚡ Fast & Reliable</h3>
+                <p>Blazing-fast execution with minimal lag.</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔒 Secure</h3>
+                <p>Built with top-notch security to protect your data.</p>
+            </div>
+            <div class="feature-item">
+                <h3>🎯 Easy to Use</h3>
+                <p>User-friendly interface for seamless operation.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li><strong>100+ Universal Scripts & Exploits</strong> – Auto-farm, ESP, Fly, Speed Hacks, and more!</li>
-            <li><strong>Custom API Integration</strong> – Seamless script execution and more control.</li>
-            <li><strong>Advanced Script Executor</strong> – Powerful and undetectable execution of Lua scripts.</li>
-            <li><strong>Easy-to-Use Interface</strong> – Simple yet powerful user interface for all users.</li>
-            <li><strong>Advanced Anti-Detection</strong> – Stay undetected with cutting-edge anti-ban technology.</li>
-        </ul>
+    <section id="download" class="download">
+        <h2>📥 Download</h2>
+        <p>Get the latest version of our executor.</p>
+        <a href="#" class="btn">💻 Download for Windows</a>
+        <a href="#" class="btn">🍏 Download for Mac</a>
     </section>
 
-    <section id="captcha">
-        <h2>Verify You're Not a Robot</h2>
-        <form action="submit.php" method="POST">
-            <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
-            <button type="submit" class="submit-btn animate-button">Verify and Continue</button>
+    <section id="contact" class="contact">
+        <h2>📞 Contact</h2>
+        <p>Have questions? Reach out to us!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">📩 Send Message</button>
         </form>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 WindYE. All Rights Reserved.</p>
-            <p>Follow us on <a href="https://discord.gg/yourinvitecode" target="_blank">Discord</a></p>
-        </div>
+        <p>© 2023 Hacker Executor. All rights reserved.</p>
     </footer>
 
-    <script>
-        function downloadExecutor() {
-            Swal.fire({
-                title: 'Download Started',
-                text: 'The download will begin shortly. Please make sure to allow the download.',
-                icon: 'success',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                window.location.href = 'WindYE_Executor_Installer.exe'; // Ensure your installer file is available
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
 
