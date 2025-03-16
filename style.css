@@ -1,60 +1,185 @@
-/* General Styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-  font-family: 'Courier New', monospace;
-  background: #000;
-  color: #0f0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.matrix-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1;
+body {
+    background-color: #2e2e2e;
+    color: white;
+    padding: 0;
+    transition: background-color 1s ease-in-out;
 }
 
-/* Neon Text Effect */
-.neon-text {
-  color: #0f0;
-  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
-  animation: glow 1.5s infinite alternate;
+header {
+    background-color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
-  }
-  to {
-    text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0, 0 0 80px #0f0;
-  }
+header .logo img {
+    width: 100px;
+    height: auto;
 }
 
-/* Neon Button */
-.neon-button {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  color: #0f0;
-  border: 2px solid #0f0;
-  text-decoration: none;
-  text-shadow: 0 0 5px #0f0;
-  box-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
-  transition: all 0.3s ease;
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-.neon-button:hover {
-  background: #0f0;
-  color: #000;
-  box-shadow: 0 0 20px #0f0, 0 0 40px #0f0;
+nav ul li {
+    display: inline;
+    margin: 0 20px;
 }
 
-/* Neon Link */
-.neon-link {
-  color: #0f0;
-  text-decoration: none;
-  text
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #0078d4;
+}
+
+#hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #333;
+    background: linear-gradient(45deg, #ff0066, #9900cc);
+    color: white;
+    animation: colorShift 3s ease infinite;
+}
+
+#hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #0078d4;
+    padding: 15px 30px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #005fa3;
+}
+
+#download {
+    background-color: #444;
+    padding: 40px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.download-btn {
+    background-color: #28a745;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+#features {
+    padding: 40px;
+    background-color: #555;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#features ul {
+    list-style-type: none;
+}
+
+#features li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#captcha {
+    padding: 40px;
+    background-color: #666;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #0078d4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff0066;
+}
+
+/* Color Changing Effect */
+@keyframes colorShift {
+    0% {
+        background: linear-gradient(45deg, #ff0066, #9900cc);
+    }
+    50% {
+        background: linear-gradient(45deg, #ff6600, #33ccff);
+    }
+    100% {
+        background: linear-gradient(45deg, #ff0066, #9900cc);
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
+}
+
