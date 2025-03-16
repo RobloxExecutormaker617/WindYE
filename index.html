@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WindYE - Game Exploits for Testing</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WindYE - Ultimate Roblox Executor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
+
 <body>
-  <div class="matrix-container">
-    <h1 class="neon-text">Welcome to WindYE</h1>
-    <p class="neon-text">Game-changing exploits for testing purposes only.</p>
-    <a href="https://discord.gg/Dtgn4x7hfd" class="neon-button">Join Discord</a>
-    <a href="mailto:naseebnoveera0@gmail.com" class="neon-button">Email Us</a>
-    <p class="disclaimer neon-text">Disclaimer: All exploits are for testing purposes only. Misuse is prohibited.</p>
-  </div>
-  <canvas id="matrix"></canvas>
-  <script src="script.js"></script>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="WindYE Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="https://discord.gg/yourinvitecode" target="_blank">Join Discord</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Welcome to WindYE</h1>
+        <p>Your ultimate Roblox executor with advanced features and custom scripts.</p>
+        <a href="#download" class="cta-button">Download Now</a>
+    </section>
+
+    <section id="download">
+        <h2>Download the Ultimate Executor</h2>
+        <p>Get WindYE, the most powerful and advanced Roblox executor. Just click the button below to get started!</p>
+        <button onclick="downloadExecutor()" class="download-btn">Download Executor</button>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <ul>
+            <li><strong>100+ Universal Scripts & Exploits</strong> – Auto-farm, ESP, Fly, Speed Hacks, and more!</li>
+            <li><strong>Custom API Integration</strong> – Seamless script execution and more control.</li>
+            <li><strong>Advanced Script Executor</strong> – Powerful and undetectable execution of Lua scripts.</li>
+            <li><strong>Easy-to-Use Interface</strong> – Simple yet powerful user interface for all users.</li>
+            <li><strong>Advanced Anti-Detection</strong> – Stay undetected with cutting-edge anti-ban technology.</li>
+        </ul>
+    </section>
+
+    <section id="captcha">
+        <h2>Verify You're Not a Robot</h2>
+        <form action="submit.php" method="POST">
+            <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
+            <button type="submit" class="submit-btn">Verify and Continue</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 WindYE. All Rights Reserved.</p>
+            <p>Follow us on <a href="https://discord.gg/yourinvitecode" target="_blank">Discord</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function downloadExecutor() {
+            Swal.fire({
+                title: 'Download Started',
+                text: 'The download will begin shortly. Please make sure to allow the download.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = 'WindYE_Executor_Installer.exe'; // Ensure your installer file is available
+            });
+        }
+    </script>
 </body>
+
 </html>
