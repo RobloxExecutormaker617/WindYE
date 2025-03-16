@@ -1,33 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WindYE - Ultimate Executor</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindYE - Ultimate Site</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* Black background */
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .background-canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-top: 20%;
+            font-size: 40px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Particle.js Background -->
+    <div id="particles-js" class="background-canvas"></div>
 
-  <div class="container">
-    <h1>⚡ WindYE Executor ⚡</h1>
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworksCanvas" class="background-canvas"></canvas>
 
-    <!-- Discord Join -->
-    <a href="https://discord.gg/XySJyP6t" class="discord-btn" target="_blank">Join Our Discord</a>
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas" class="background-canvas"></canvas>
 
-    <!-- Download Section -->
-    <form action="YOUR_DOWNLOAD_LINK_HERE" method="get" onsubmit="return validateCaptcha()">
-      <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
-      <button type="submit" class="download-btn">Download WindYE</button>
-    </form>
-
-    <!-- Ad Placeholder -->
-    <div class="ad-box">
-      <!-- Add your AdSense Code Here -->
-      <p>💰 Monetize This Space! 💰</p>
+    <!-- Main Content -->
+    <div class="content">
+        Welcome to WindYE! 🚀✨
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <!-- Particle.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Initialize Particle.js -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": { "enable": true, "value_area": 800 }
+                },
+                "color": { "value": "#00ff99" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#000000" },
+                    "polygon": { "nb_sides": 5 }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": { "enable": false }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": { "enable": false }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00ff99",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "bounce": true
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "repulse": { "distance": 100, "duration": 0.4 },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+    <!-- Fireworks Effect using tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-fireworks@2.2.3/tsparticles.preset.fireworks.min.js"></script>
+    <script>
+        (async () => {
+            await loadFireworksPreset(tsParticles);
+            await tsParticles.load({
+                id: "fireworksCanvas",
+                options: {
+                    preset: "fireworks",
+                    background: {
+                        color: "#000000"
+                    }
+                }
+            });
+        })();
+    </script>
+
+    <!-- Matrix Rain Effect -->
+    <script>
+        const matrixCanvas = document.getElementById('matrixCanvas');
+        const ctxMatrix = matrixCanvas.getContext('2d');
+        matrixCanvas.width = window.innerWidth;
+        matrixCanvas.height = window.innerHeight;
+
+        const matrixCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+        const fontSize = 16;
+        const columns = matrixCanvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function drawMatrix() {
+            ctxMatrix.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctxMatrix.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+            ctxMatrix.fillStyle = '#00ff00';
+            ctxMatrix.font = `${fontSize}px monospace`;
+
+            drops.forEach((y, index) => {
+                const text = matrixCharacters.charAt(Math.floor(Math.random() * matrixCharacters.length));
+                const x = index * fontSize;
+                ctxMatrix.fillText(text, x, y * fontSize);
+
+                if (y * fontSize > matrixCanvas.height && Math.random() > 0.975) {
+                    drops[index] = 0;
+                }
+                drops[index]++;
+            });
+        }
+
+        setInterval(drawMatrix, 50);
+    </script>
 </body>
 </html>
