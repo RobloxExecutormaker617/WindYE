@@ -6,9 +6,3 @@ function validateCaptcha() {
   }
   return true;
 }
-
-// Optional: Add glowing title animation
-let title = document.querySelector("h1");
-setInterval(() => {
-  title.style.color = title.style.color === '#00ffff' ? '#ff0080' : '#00ffff';
-}, 1000);
