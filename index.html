@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacker Executor</title>
+    <title>Matrix Executor</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Folder Icons in Top Right Corner -->
-    <div class="folder-icons">
-        <div class="folder">📁 Home</div>
-        <div class="folder">📁 Features</div>
-        <div class="folder">📁 Download</div>
-        <div class="folder">📁 Contact</div>
-    </div>
+    <!-- Matrix Background -->
+    <canvas id="matrix"></canvas>
+
+    <!-- Buttons at the Top -->
+    <nav>
+        <ul>
+            <li><a href="#home" class="btn">🏠 Home</a></li>
+            <li><a href="#features" class="btn">✨ Features</a></li>
+            <li><a href="#download" class="btn">💾 Download</a></li>
+            <li><a href="#contact" class="btn">📞 Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Main Content -->
-    <header>
-        <h1>Hacker Executor</h1>
-        <p>Your ultimate tool for hacking and execution.</p>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h2>🚀 Welcome to the Future</h2>
-            <p>Experience the power of our executor with cutting-edge features.</p>
-            <a href="#download" class="btn">💾 Download Now</a>
-        </div>
+    <section id="home" class="hero">
+        <h1>Matrix Executor</h1>
+        <p>Your ultimate tool for execution and automation.</p>
+        <a href="#download" class="btn">💻 Download Now</a>
     </section>
 
     <section id="features" class="features">
@@ -49,7 +47,7 @@
     </section>
 
     <section id="download" class="download">
-        <h2>📥 Download</h2>
+        <h2>💾 Download</h2>
         <p>Get the latest version of our executor.</p>
         <a href="#" class="btn">💻 Download for Windows</a>
         <a href="#" class="btn">🍏 Download for Mac</a>
@@ -62,15 +60,14 @@
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">📩 Send Message</button>
+            <button type="submit" class="btn">📩 Send Message</button>
         </form>
     </section>
 
     <footer>
-        <p>© 2023 Hacker Executor. All rights reserved.</p>
+        <p>© 2025 Matrix Executor. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
