@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Your Website Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .discord-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7289da;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .discord-btn:hover {
+            background-color: #5b6eae;
+        }
+        form input, form textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="features.html">✨ Features</a></li>
+            <li><a href="downloads.html">⬇️ Downloads</a></li>
+            <li><a href="contact.html">📞 Contact</a></li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="faq.html">❓ FAQ</a></li>
+            <li><a href="tos.html">⚖️ Terms of Service</a></li>
+            <li><a href="privacy.html">🔒 Privacy Policy</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Contact Us</h1>
+        <p>If you have any questions or need support, please fill out the form below:</p>
+        <form action="mailto:naseebnoveera0@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <input type="submit" value="Send">
+        </form>
+
+        <h2>Join Our Discord Community</h2>
+        <p>Connect with other users and get real-time support by joining our Discord server:</p>
+        <a href="https://discord.gg/XySJyP6t" class="discord-btn">Join Our Discord Server</a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
